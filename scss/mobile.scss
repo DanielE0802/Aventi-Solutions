@@ -15,214 +15,252 @@ body {
         flex-direction: column;
         align-items: center;
 
-        .section-filter {
-            width: 90%;
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            transform: translateY(-50%);
 
-            .container-filter {                
-                padding-bottom: 10px;
+    }
+
+}
+
+.section-filter {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    box-shadow: 0px 2px 18px -8px $c-primary;
+
+    .container-filter {
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+
+        .filter {
+            margin: 10px 0px 0px 10px;
+            display: flex;
+            div {
+                p {
+                    background-color: $c-filter;
+                    font-size: $s-primary;
+                    font-weight: 700;
+                    padding: 4px 12px;
+                    padding-top: 8px;
+                    color: $c-primary;
+                    border-radius: 6px;
+                }
+            }
+
+            .button-x {
+                width: 30px;
+                height: 30px;
+                background-color: $c-primary;
+                justify-content: center;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                transform: translateX(-5px);
+                cursor: pointer;
+                transition: background-color .2s ease;
+
+                span {
+                    background-color: #fff;
+                    display: block;
+                    border-radius: 3px;
+                    width: 50%;
+                    height: 2px;
+                    transition: transform .3s ease;
+                }
+
+                .top-line {
+                    margin: 0 auto;
+                    transform: translateY(14px) rotate(-45deg);
+
+                }
+
+                .bottom-line {
+                    margin: 0 auto;
+                    transform: translateY(12px)rotate(45deg);
+
+                }
+                &:hover{
+                    background-color: $Very-Cyan;
+                    .top-line {
+                       transform: scale(1.16) translateY(12px) rotate(-45deg);
+    
+                    }
+    
+                    .bottom-line {
+                        transform: scale(1.14) translateY(10.5px) rotate(45deg);
+    
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .filter-clear {
+        font-size: $s-primary;
+        font-family: $f-primary;
+        color: $Dark-Cyan;
+        font-weight: 700;
+        text-align: center;
+        align-self: center;
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin-right: 5px;
+        height: 100%;
+        cursor: pointer;
+        transition: background .2s ease, color .4s ease;
+
+        p {
+            transition: border .1s ease;
+        }
+
+        &:hover {
+            color: $c-primary;
+            p {
+                border-bottom: 2px solid $c-primary;
+            }
+        }
+
+        &:active {
+            background-color: $c-filter;
+        }
+    }
+}
+
+.cards {
+    width: 90%;
+
+    .card {
+        border-left: 5px solid $c-primary;
+        padding-left: 30px;
+        margin: 20px 0px 30px 0px;
+        background: #fff;
+        box-shadow: 0px 5px 72px -27px $c-primary;
+        border-radius: 7px;
+
+        .logo {
+            transform: translateY(-30px);
+            height: 50px;
+            img {
+                width: 60px;
+            }
+        }
+
+        .card-info {
+
+            .card-info-general {
                 display: flex;
                 flex-wrap: wrap;
-                height: 100%;
+                align-items: center;
+                font-size: 13px;
+                font-weight: 700;
+                
 
-                .filter {
-                    margin: 10px 0px 0px 10px;
-                    display: flex;
+                p:nth-child(1) {
+                    color: $c-primary;
+                    margin-right: 3vw;
+                    cursor: pointer;
+                }
+
+                p:nth-child(2) {
+                    background-color: $c-primary;
+                    padding: 4px 9px;
+                    padding-top: 8px;
+                    border-radius: 30px;
+                    color: #fff;
+                    margin-right: 2vw;
+                    cursor: pointer;
+                }
+
+                p:nth-child(3) {
+                    background-color: $Very-Cyan;
+                    padding: 4px 9px;
+                    padding-top: 8px;
+                    color: #fff;
+                    border-radius: 30px;
+                    cursor: pointer;
+                }
+            }
 
 
-                    div {
+            .card-info-position {
+                margin-top: 10px;
 
-                        p {
-                            background-color: $c-filter;
-                            font-size: $s-primary;
-                            font-weight: 700;
-                            padding: 4px 12px;
-                            padding-top: 8px;
-                            color: $c-primary;
-
-                            border-radius: 6px;
-                        }
+                h1 {
+                    font-size: 17px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    color: $Very-Cyan;
+                    transition: color .2s ease;
+                    display: inline-block;
+                    &:hover{
+                        color: $c-primary;
                     }
-
-                    .button-x {
-                        width: 30px;
-                        height: 30px;
-                        background-color: $c-primary;
-                        justify-content: center;
-                        transform: translateX(-5px);
-                        cursor: pointer;
-
-                        span {
-                            background-color: #fff;
-                            display: block;
-                            border-radius: 3px;
-                            width: 50%;
-                            height: 2px;
-
-                        }
-
-                        .top-line {
-                            margin: 0 auto;
-                            transform: translateY(14px) rotate(-45deg);
-
-                        }
-
-                        .bottom-line {
-                            margin: 0 auto;
-                            transform: translateY(12px)rotate(45deg);
-
-                        }
-                    }
-
                 }
               
             }
 
-            .filter-clear{
-                font-size: $s-primary;
-                font-family: $f-primary;
-                color: $Dark-Cyan;
-                font-weight: 700;
-                text-align: center;
-                align-self: center;
-                padding: 10px;
-                border-radius: 6px;
-                margin-right: 5px;
-                height: 100%;
-                cursor: pointer;
-                transition: background .4s ease, color .4s ease;
-                &:hover{
-                    background-color: $c-background;
-                    color: $c-primary;
-                    
+            .card-info-more {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 15px 0px;
+                border-bottom: 2px solid $Dark-Cyan;
+                width: 90%;
+
+                p {
+                    margin-right: 5.5vw;
+                    font-size: 14px;
+                    color: $Dark-Cyan;
+
+                    &::before {
+                        content: " ";
+                        position: absolute;
+                        width: 4px;
+                        height: 4px;
+                        border-radius: 100%;
+                        background-color: $Dark-Cyan;
+                        transform: translate(-2.8vw, 100%);
+                    }
                 }
-                &:active{
-                    background-color: $c-primary;
+
+                p:nth-child(1)::before {
+                    width: 0;
+                }
+            }
+
+        }
+
+        .card-filter {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 30px 0px 0px;
+            padding-bottom: 15px;
+
+
+            .p-filter {
+                background-color: $c-filter;
+                font-size: $s-primary;
+                font-weight: 700;
+                margin: 0px 10px 10px 0px;
+                padding: 4px 9px;
+                padding-top: 8px;
+                color: $c-primary;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: background .4s ease, color .2s ease;
+
+                &:hover{
+                    background: $c-primary;
                     color: #fff;
                 }
-            }
-
-        }
-
-        .cards {
-            width: 90%;
-
-            .card {
-                border-left: 5px solid $c-primary;
-                padding-left: 30px;
-                margin: 20px 0px 30px 0px;
-                background: #fff;
-                box-shadow: 0px 5px 72px -27px $c-primary;
-                border-radius: 7px;
-
-                .logo {
-                    transform: translateY(-30px);
-                    height: 50px;
-
-                    img {
-                        width: 60px;
-                    }
-                }
-
-                .card-info {
-
-                    .card-info-general {
-                        display: flex;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        font-size: 13px;
-                        font-weight: 700;
-
-                        p:nth-child(1) {
-                            color: $c-primary;
-                            margin-right: 3vw;
-                        }
-
-                        p:nth-child(2) {
-                            background-color: $c-primary;
-                            padding: 4px 9px;
-                            padding-top: 8px;
-                            border-radius: 30px;
-                            color: #fff;
-                            margin-right: 2vw;
-                        }
-
-                        p:nth-child(3) {
-                            background-color: $Very-Cyan;
-                            padding: 4px 9px;
-                            padding-top: 8px;
-                            color: #fff;
-                            border-radius: 30px;
-                        }
-                    }
-
-
-                    .card-info-position {
-                        margin-top: 10px;
-
-                        h1 {
-                            font-size: 17px;
-                            font-weight: 700;
-                        }
-                    }
-
-                    .card-info-more {
-                        display: flex;
-                        flex-wrap: wrap;
-                        padding: 15px 0px;
-                        border-bottom: 2px solid $Dark-Cyan;
-                        width: 90%;
-
-                        p {
-                            margin-right: 5.5vw;
-                            font-size: 14px;
-                            color: $Dark-Cyan;
-
-                            &::before {
-                                content: " ";
-                                position: absolute;
-                                width: 4px;
-                                height: 4px;
-                                border-radius: 100%;
-                                background-color: $Dark-Cyan;
-                                transform: translate(-2.8vw, 100%);
-                            }
-                        }
-
-                        p:nth-child(1)::before {
-                            width: 0;
-                        }
-                    }
-
-                }
-
-                .card-filter {
-                    display: flex;
-                    flex-wrap: wrap;
-                    margin: 15px 30px 0px 0px;
-                    padding-bottom: 15px;
-
-
-                    .p-filter {
-                        background-color: $c-filter;
-                        font-size: $s-primary;
-                        font-weight: 700;
-                        margin: 0px 10px 10px 0px;
-                        padding: 4px 9px;
-                        padding-top: 8px;
-                        color: $c-primary;
-                        cursor: pointer;
-                        border-radius: 6px;
-                    }
-                }
-
-
-
+                
             }
         }
+
+
+
     }
-
 }
