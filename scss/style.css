@@ -17,16 +17,72 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
-    body main .filter {
+    body main .section-filter {
       width: 90%;
-      height: 50px;
-      background-color: #eef6f6; }
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      transform: translateY(-50%); }
+      body main .section-filter .container-filter {
+        padding-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%; }
+        body main .section-filter .container-filter .filter {
+          margin: 10px 0px 0px 10px;
+          display: flex; }
+          body main .section-filter .container-filter .filter div p {
+            background-color: #eef6f6;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 4px 12px;
+            padding-top: 8px;
+            color: #5ba4a4;
+            border-radius: 6px; }
+          body main .section-filter .container-filter .filter .button-x {
+            width: 30px;
+            height: 30px;
+            background-color: #5ba4a4;
+            justify-content: center;
+            transform: translateX(-5px);
+            cursor: pointer; }
+            body main .section-filter .container-filter .filter .button-x span {
+              background-color: #fff;
+              display: block;
+              border-radius: 3px;
+              width: 50%;
+              height: 2px; }
+            body main .section-filter .container-filter .filter .button-x .top-line {
+              margin: 0 auto;
+              transform: translateY(14px) rotate(-45deg); }
+            body main .section-filter .container-filter .filter .button-x .bottom-line {
+              margin: 0 auto;
+              transform: translateY(12px) rotate(45deg); }
+      body main .section-filter .filter-clear {
+        font-size: 15px;
+        font-family: "Spartan", sans-serif;
+        color: #7b8e8e;
+        font-weight: 700;
+        text-align: center;
+        align-self: center;
+        padding: 10px;
+        border-radius: 6px;
+        margin-right: 5px;
+        height: 100%;
+        cursor: pointer;
+        transition: background .4s ease, color .4s ease; }
+        body main .section-filter .filter-clear:hover {
+          background-color: #effafa;
+          color: #5ba4a4; }
+        body main .section-filter .filter-clear:active {
+          background-color: #5ba4a4;
+          color: #fff; }
     body main .cards {
       width: 90%; }
       body main .cards .card {
         border-left: 5px solid #5ba4a4;
         padding-left: 30px;
-        margin: 30px 0px;
+        margin: 20px 0px 30px 0px;
         background: #fff;
         box-shadow: 0px 5px 72px -27px #5ba4a4;
         border-radius: 7px; }
@@ -87,7 +143,7 @@ body {
           flex-wrap: wrap;
           margin: 15px 30px 0px 0px;
           padding-bottom: 15px; }
-          body main .cards .card .card-filter p {
+          body main .cards .card .card-filter .p-filter {
             background-color: #eef6f6;
             font-size: 15px;
             font-weight: 700;
