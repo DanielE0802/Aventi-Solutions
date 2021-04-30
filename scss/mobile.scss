@@ -1,9 +1,139 @@
+body {
+    background-color: $c-background;
+    font-family: $f-primary;
 
-
-    html {
-        scroll-behavior: smooth;
+    header {
+        background-image: url(/img/bg-header-mobile.svg);
+        background-color: $c-primary;
+        background-size: contain;
+        width: 100vw;
+        height: 150px;
     }
 
-body{
-    background: blue;
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .filter {
+            width: 90%;
+            height: 50px;
+            background-color: $c-filter;
+
+        }
+
+        .cards {
+            width: 90%;
+
+            .card {
+                border-left: 5px solid $c-primary;
+                padding-left: 30px;
+                margin: 30px 0px;
+                background: #fff;
+                box-shadow: 0px 5px 72px -27px $c-primary;
+                border-radius: 7px;
+
+                .logo {
+                    transform: translateY(-30px);
+                    height: 50px;
+
+                    img {
+                        width: 60px;
+                    }
+                }
+
+                .card-info {
+
+                    .card-info-general {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        font-size: 13px;
+                        font-weight: 700;
+
+                        p:nth-child(1) {
+                            color: $c-primary;
+                            margin-right: 3vw;
+                        }
+
+                        p:nth-child(2) {
+                            background-color: $c-primary;
+                            padding: 4px 9px;
+                            padding-top: 8px;
+                            border-radius: 30px;
+                            color: #fff;
+                            margin-right: 2vw;
+                        }
+
+                        p:nth-child(3) {
+                            background-color: $Very-Cyan;
+                            padding: 4px 9px;
+                            padding-top: 8px;
+                            color: #fff;
+                            border-radius: 30px;
+                        }
+                    }
+
+
+                    .card-info-position {
+                        margin-top: 10px;
+
+                        h1 {
+                            font-size: 17px;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .card-info-more {
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 15px 0px;
+                        border-bottom: 2px solid $Dark-Cyan;
+                        width: 90%;
+                        
+                        p {
+                            margin-right: 5.5vw;
+                            font-size: 14px;
+                            color: $Dark-Cyan;
+                            &::before{
+                                content: " ";
+                                position: absolute;
+                                width: 4px;
+                                height: 4px;
+                                border-radius: 100%;
+                                background-color: $Dark-Cyan;
+                                transform: translate(-2.8vw, 100%);
+                            }
+                        }
+                        p:nth-child(1)::before{
+                            width: 0;
+                        }
+                    }
+
+                }
+
+                .card-filter{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 15px 30px 0px 0px;
+                    padding-bottom: 15px;
+                    p{
+                        background-color: $c-filter;
+                        font-size: $s-primary;
+                        font-weight: 700;
+                        margin: 0px 10px 10px 0px;
+                        padding: 4px 9px;
+                        padding-top: 8px;
+                        color: $c-primary;
+                        cursor: pointer;
+                        border-radius: 6px;
+                    }
+                }
+
+
+
+            }
+        }
+    }
+
 }
