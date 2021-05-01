@@ -145,29 +145,19 @@ function filterJSON(element, section) {
             card[i].classList.remove('display-none')
         }
     }
-
-    console.log(filterRole)
     numberOfDeleteCards = (contador - filterRole.length)
-    console.log(numberOfDeleteCards)
-
-    for (let i = 0; i < numberOfDeleteCards; i++) {
-        card[i].classList.add('display-none')
-    }
-
+    idNoEliminar = []
     deleteCard()
     for (let i = 0; i < filterRole.length; i++) {
-        titleCard[i + numberOfDeleteCards].textContent = filterRole[i].position
-        logoCard[i + numberOfDeleteCards].setAttribute('src', filterRole[i].logo)
-        nameCompany[i + numberOfDeleteCards].textContent = filterRole[i].company
-        contract[i + numberOfDeleteCards].textContent = filterRole[i].contract
-        jobLocation[i + numberOfDeleteCards].textContent = filterRole[i].location
-        postedAt[i + numberOfDeleteCards].textContent = filterRole[i].postedAt
-        console.log(role[i + numberOfDeleteCards])
-        role[i + numberOfDeleteCards].textContent = filterRole[i].role
-        level[i + numberOfDeleteCards].textContent = filterRole[i].level
-
+        idNoEliminar.push(filterRole[i].id)
     }
-
+    for (let i = 0; i < (numberOfDeleteCards + idNoEliminar.length); i++) {
+        card[i].classList.add('display-none')
+    }
+    for (let i= 0;i < idNoEliminar.length; i++){
+        id= idNoEliminar[i]
+        card[id - 1].classList.remove('display-none')
+    }
 }
 
 function createCardFilter(nameFilter) {
