@@ -8,7 +8,7 @@ body {
   background-color: #effafa;
   font-family: "Spartan", sans-serif; }
   body header {
-    background-image: url(/img/bg-header-mobile.svg);
+    background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-mobile.svg");
     background-color: #5ba4a4;
     background-size: contain;
     width: 100vw;
@@ -184,6 +184,9 @@ body {
           color: #fff; }
 
 @media screen and (min-width: 1024px) {
+  body header {
+    background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-desktop.svg"); }
+
   .section-filter {
     width: 80%; }
     .section-filter .container-filter {
