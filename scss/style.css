@@ -183,6 +183,9 @@ body {
           background: #5ba4a4;
           color: #fff; }
 
+.display-none {
+  display: none; }
+
 @media screen and (min-width: 1024px) {
   body header {
     background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-desktop.svg"); }
@@ -251,6 +254,9 @@ body {
           transition: background .4s ease, color .2s ease; }
           .cards .card .card-filter .p-filter:hover {
             background: #5ba4a4;
-            color: #fff; } }
+            color: #fff; }
+
+  .display-none {
+    display: none !important; } }
 
 /*# sourceMappingURL=style.css.map */
