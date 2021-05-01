@@ -115,17 +115,17 @@ body {
       font-weight: 700; }
       .cards .card .card-info .card-info-general p:nth-child(1) {
         color: #5ba4a4;
-        margin-right: 3vw;
+        margin-right: 1.2vw;
         cursor: pointer; }
-      .cards .card .card-info .card-info-general p:nth-child(2) {
+      .cards .card .card-info .card-info-general .new {
         background-color: #5ba4a4;
         padding: 4px 9px;
         padding-top: 8px;
         border-radius: 30px;
         color: #fff;
-        margin-right: 2vw;
+        margin-right: 0.9vw;
         cursor: pointer; }
-      .cards .card .card-info .card-info-general p:nth-child(3) {
+      .cards .card .card-info .card-info-general .featured {
         background-color: #2c3a3a;
         padding: 4px 9px;
         padding-top: 8px;
@@ -211,14 +211,14 @@ body {
         margin-right: 30px; }
         .cards .card .logo img {
           width: 100px; }
-      .cards .card .card-info .card-info-general p:nth-child(1) {
-        margin-right: 1.5vw; }
-      .cards .card .card-info .card-info-general p:nth-child(2) {
+      .cards .card .card-info .card-info-general .new {
+        margin-right: 0.7vw; }
+      .cards .card .card-info .card-info-general .featured {
         margin-right: 0.6vw; }
       .cards .card .card-info .card-info-position {
         margin-top: 18px; }
         .cards .card .card-info .card-info-position h1 {
-          font-size: 18px; }
+          font-size: 20px; }
       .cards .card .card-info .card-info-more {
         padding: 18px 0px;
         border-bottom: 0px;

@@ -46,10 +46,10 @@
             }
             .card-info {
                 .card-info-general {
-                    p:nth-child(1) {
-                        margin-right: 1.5vw;
+                    .new{
+                        margin-right: 0.7vw;
                     }
-                    p:nth-child(2) {
+                    .featured{
                         margin-right: 0.6vw;
                     }
                 }
@@ -57,7 +57,7 @@
                 .card-info-position {
                     margin-top: 18px;
                     h1 {
-                        font-size: 18px;
+                        font-size: 20px;
                     }
 
                 }

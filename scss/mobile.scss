@@ -161,21 +161,21 @@ body {
 
                 p:nth-child(1) {
                     color: $c-primary;
-                    margin-right: 3vw;
+                    margin-right: 1.2vw;
                     cursor: pointer;
                 }
 
-                p:nth-child(2) {
+                .new{
                     background-color: $c-primary;
                     padding: 4px 9px;
                     padding-top: 8px;
                     border-radius: 30px;
                     color: #fff;
-                    margin-right: 2vw;
+                    margin-right: 0.9vw;
                     cursor: pointer;
                 }
 
-                p:nth-child(3) {
+                .featured{
                     background-color: $Very-Cyan;
                     padding: 4px 9px;
                     padding-top: 8px;
