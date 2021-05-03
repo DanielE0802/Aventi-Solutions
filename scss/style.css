@@ -96,7 +96,6 @@ body {
 .cards {
   width: 90%; }
   .cards .card {
-    border-left: 5px solid #5ba4a4;
     padding-left: 30px;
     margin: 20px 0px 30px 0px;
     background: #fff;
@@ -185,6 +184,9 @@ body {
 
 .display-none {
   display: none; }
+
+.featured-active {
+  border-left: 5px solid #5ba4a4; }
 
 @media screen and (min-width: 1024px) {
   body header {

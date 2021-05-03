@@ -38,6 +38,7 @@ body {
         .filter {
             margin: 10px 0px 0px 10px;
             display: flex;
+
             div {
                 p {
                     background-color: $c-filter;
@@ -81,16 +82,18 @@ body {
                     transform: translateY(12px)rotate(45deg);
 
                 }
-                &:hover{
+
+                &:hover {
                     background-color: $Very-Cyan;
+
                     .top-line {
-                       transform: scale(1.16) translateY(12px) rotate(-45deg);
-    
+                        transform: scale(1.16) translateY(12px) rotate(-45deg);
+
                     }
-    
+
                     .bottom-line {
                         transform: scale(1.14) translateY(10.5px) rotate(45deg);
-    
+
                     }
                 }
             }
@@ -119,6 +122,7 @@ body {
 
         &:hover {
             color: $c-primary;
+
             p {
                 border-bottom: 2px solid $c-primary;
             }
@@ -134,7 +138,7 @@ body {
     width: 90%;
 
     .card {
-        border-left: 5px solid $c-primary;
+
         padding-left: 30px;
         margin: 20px 0px 30px 0px;
         background: #fff;
@@ -144,6 +148,7 @@ body {
         .logo {
             transform: translateY(-30px);
             height: 50px;
+
             img {
                 width: 60px;
             }
@@ -157,7 +162,7 @@ body {
                 align-items: center;
                 font-size: 13px;
                 font-weight: 700;
-                
+
 
                 p:nth-child(1) {
                     color: $c-primary;
@@ -165,7 +170,7 @@ body {
                     cursor: pointer;
                 }
 
-                .new{
+                .new {
                     background-color: $c-primary;
                     padding: 4px 9px;
                     padding-top: 8px;
@@ -175,7 +180,7 @@ body {
                     cursor: pointer;
                 }
 
-                .featured{
+                .featured {
                     background-color: $Very-Cyan;
                     padding: 4px 9px;
                     padding-top: 8px;
@@ -196,11 +201,12 @@ body {
                     color: $Very-Cyan;
                     transition: color .2s ease;
                     display: inline-block;
-                    &:hover{
+
+                    &:hover {
                         color: $c-primary;
                     }
                 }
-              
+
             }
 
             .card-info-more {
@@ -252,11 +258,11 @@ body {
                 border-radius: 6px;
                 transition: background .4s ease, color .2s ease;
 
-                &:hover{
+                &:hover {
                     background: $c-primary;
                     color: #fff;
                 }
-                
+
             }
         }
 
@@ -265,6 +271,10 @@ body {
     }
 }
 
-.display-none{
+.display-none {
     display: none;
+}
+
+.featured-active{
+    border-left: 5px solid $c-primary;
 }
