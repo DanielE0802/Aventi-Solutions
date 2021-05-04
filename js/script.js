@@ -2,32 +2,37 @@ let card = document.getElementsByClassName("card");
 let cardsContainer = document.getElementById('cardsContainer');
 let clearBtn = document.getElementById('clearBtn')
 let containerFilter = document.querySelector("body > main > section.section-filter > div.container-filter");
+let allFilters = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div > div:nth-child(1) > p")
+let filtroContainer = document.getElementById('containerFilter')
+let json;
 let clearActive = "false"
 let titlecard;
 let logoCard;
 let contract;
+let idNoEliminar = []
 let nameCompany;
-let json;
 let jobLocation;
 let postedAt;
 let role;
 let level;
 let skills;
+let fov;
 let cardFilter;
 let filtroDeBusqueda;
-let filtroContainer = document.getElementById('containerFilter')
 let contador;
+let filterLenguages = [];
 let numberOfDeleteCards;
 let p;
+let filtroooooo = [];
 let newSearch;
-let todosLosP;
 let arrayNewSearch = [];
 let seAgregoEventoBtn = 0;
-let filterRole = [];
-let addEventListenerBtn = 0
-let filtroBtnFilter = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div > div:nth-child(1) > p")
+let counterEvents = 0
+let filterArray = [];
+let retornar = [];
 let filterActive = "false"
-
+let allLenguages = document.querySelectorAll("#cardsContainer > div > div.card-filter > p.lenguages")
+let iteracion = 0;
 //Traer al JSON
 
 function callData() {
@@ -118,6 +123,7 @@ function infoTextFilters(i, laInfo) {
             let createP = document.createElement('p');
             createP.textContent = [laInfo[i].tools[u]]
             createP.classList.add('p-filter');
+            createP.classList.add('tools');
             cardFilter[i].insertBefore(createP, skills[i]);
             cardFilter[i].appendChild(createP);
 
@@ -128,8 +134,73 @@ function infoTextFilters(i, laInfo) {
         let createP = document.createElement('p');
         createP.textContent = [laInfo[i].languages[u]]
         createP.classList.add('p-filter')
+        createP.classList.add('lenguages');
         cardFilter[i].insertBefore(createP, skills[i])
         cardFilter[i].appendChild(createP)
+
+        createP.addEventListener('click', function (e) {
+
+            allFiltersfilterArrayLanguagues(e)
+
+            containerFilter = document.querySelector("body > main > section.section-filter > div.container-filter")
+            filterDesing = `<div><p class="p-filter" >${e.target.innerText}</p></div><div class="button-x"><span class="top-line"></span><span class="bottom-line"></span></div>`
+            createDiv = document.createElement('div')
+            createDiv.classList.add('filter')
+            createDiv.innerHTML = filterDesing
+            containerFilter.appendChild(createDiv)
+
+
+            allFilters = document.querySelectorAll("#containerFilter > div")
+            allFilters[counterEvents].addEventListener('click', function (e) {
+
+                if (e.path.length == 10) {
+                    e.path[2].remove()
+                    counterEvents--
+                    filterActive = "true"
+                    allFilters = document.querySelectorAll("#containerFilter > div")
+                    allFiltersfilterArrayLanguagues(e)
+                    deleteOneFilterLanguagesAndTools()
+                }
+
+                if (e.path.length == 9) {
+                    e.path[1].remove()
+                    counterEvents--
+                    filterActive = "true"
+                    allFilters = document.querySelectorAll("#containerFilter > div")
+                    allFiltersfilterArrayLanguagues(e)
+                    deleteOneFilterLanguagesAndTools()
+                }
+
+                if (allFilters.length < 1) {
+                    clearFilter()
+                }
+
+                filterActive = "false"
+            })
+            counterEvents++
+
+            for (let i = 1; i < contador; i++) {
+                card[i].classList.remove('display-none')
+            }
+
+            console.log(filterArray)
+            numberOfDeleteCards = (contador - filterArray.length)
+            idNoEliminar = []
+            console.log(idNoEliminar)
+
+            //mete id para no eliminar
+            for (let i = 0; i < filterArray.length; i++) {
+                idNoEliminar.push(filterArray[i].id)
+            }
+
+            for (let i = 0; i < (numberOfDeleteCards + idNoEliminar.length); i++) {
+                card[i].classList.add('display-none')
+            }
+            for (let i = 0; i < idNoEliminar.length; i++) {
+                id = idNoEliminar[i]
+                card[id - 1].classList.remove('display-none')
+            }
+        })
     }
 
 
@@ -155,16 +226,19 @@ function infoTextFilters(i, laInfo) {
 
 function filterJSON(element, section) {
 
-    if (filterRole.length < 1 || clearActive == "true" || filterActive == "true") {
+    allFilters = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div")
+
+    if (filterArray.length < 1 || clearActive == "true" || filterActive == "true") {
         clearActive = "false"
-        filterRole = json.filter(function (array) {
+        filterArray = json.filter(function (array) {
             console.log(element)
             return array[section] == element
         })
     }
+
     else {
         clearActive = "false"
-        filterRole = filterRole.filter(function (array) {
+        filterArray = filterArray.filter(function (array) {
             console.log(element)
             return array[section] == element
         })
@@ -172,12 +246,14 @@ function filterJSON(element, section) {
             card[i].classList.remove('display-none')
         }
     }
-    numberOfDeleteCards = (contador - filterRole.length)
+    numberOfDeleteCards = (contador - filterArray.length)
     idNoEliminar = []
 
+    clearActive = "false"
+
     //mete id para no eliminar
-    for (let i = 0; i < filterRole.length; i++) {
-        idNoEliminar.push(filterRole[i].id)
+    for (let i = 0; i < filterArray.length; i++) {
+        idNoEliminar.push(filterArray[i].id)
     }
 
     for (let i = 0; i < (numberOfDeleteCards + idNoEliminar.length); i++) {
@@ -188,8 +264,8 @@ function filterJSON(element, section) {
         card[id - 1].classList.remove('display-none')
     }
 
-    filtroBtnFilter = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div")
-
+    allFilters = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div")
+    clearActive = "false"
 
 }
 
@@ -203,37 +279,37 @@ function createPFilter(nameFilter) {
     createDiv.classList.add('filter')
     createDiv.innerHTML = filterDesing
     containerFilter.appendChild(createDiv)
- 
-   
 
-    filtroBtnFilter = document.querySelectorAll("#containerFilter > div")
-    filtroBtnFilter[addEventListenerBtn].addEventListener('click', function (e) {
+
+
+    allFilters = document.querySelectorAll("#containerFilter > div")
+    allFilters[counterEvents].addEventListener('click', function (e) {
 
         if (e.path.length == 10) {
             e.path[2].remove()
-            addEventListenerBtn--
+            counterEvents--
             filterActive = "true"
-            filtroBtnFilter = document.querySelectorAll("#containerFilter > div")
+            allFilters = document.querySelectorAll("#containerFilter > div")
             filterJSON(e.path[3].innerText, "role")
-            deleteOneFilter()
-        }
-        
-        if (e.path.length == 9) {
-            e.path[1].remove()
-            addEventListenerBtn--
-            filterActive = "true"
-            filtroBtnFilter = document.querySelectorAll("#containerFilter > div")
-            filterJSON(e.path[2].innerText, "role")
-            deleteOneFilter()
+            deleteOnefilterArrayAndLevel()
         }
 
-        if (filtroBtnFilter.length < 1) {
+        if (e.path.length == 9) {
+            e.path[1].remove()
+            counterEvents--
+            filterActive = "true"
+            allFilters = document.querySelectorAll("#containerFilter > div")
+            filterJSON(e.path[2].innerText, "role")
+            deleteOnefilterArrayAndLevel()
+        }
+
+        if (allFilters.length < 1) {
             clearFilter()
         }
 
         filterActive = "false"
     })
-    addEventListenerBtn++
+    counterEvents++
 }
 
 
@@ -245,8 +321,9 @@ function clearFilter() {
     for (let i = 0; i <= numberOfDeleteCards; i++) {
         card[i].classList.remove('display-none')
     }
-    addEventListenerBtn = 0
+    counterEvents = 0
     clearActive = "true"
+
 }
 
 callData()
@@ -254,12 +331,12 @@ callData()
 //Clear Filter event
 clearBtn.addEventListener('click', () => {
     clearFilter()
-
+    eventAllLenguages()
 
 })
 
 
-function deleteOneFilter() {
+function deleteOnefilterArrayAndLevel() {
     filtroContainer = document.getElementById('containerFilter')
     newSearch = filtroContainer.innerText;
     arrayNewSearch = newSearch.split("\n\n")
@@ -270,8 +347,118 @@ function deleteOneFilter() {
     }
     if (arrayNewSearch[0] == "Senior" || arrayNewSearch[0] == "Junior" || arrayNewSearch[0] == "Midweight") {
         filterJSON(arrayNewSearch[0], "level")
-     
+
     }
     filterActive = "false"
 
+}
+
+function deleteOneFilterLanguagesAndTools(){
+    filtroContainer = document.getElementById('containerFilter')
+    newSearch = filtroContainer.innerText;
+    arrayNewSearch = newSearch.split("\n\n")
+    console.log(arrayNewSearch)
+
+    if (arrayNewSearch[0] == "CSS" || arrayNewSearch[0] == "JavaScript" || arrayNewSearch[0] == "HTML") {
+        buscar = arrayNewSearch[0]
+        allFiltersfilterArrayLanguagues(buscar)
+    }
+    if (arrayNewSearch[0] == "Senior" || arrayNewSearch[0] == "Junior" || arrayNewSearch[0] == "Midweight") {
+        filterJSON(arrayNewSearch[0], "level")
+
+    }
+    filterActive = "false"
+}
+
+//filter lenguajes and tools
+
+allTools = document.querySelectorAll("#cardsContainer > div > div.card-filter > p.tools")
+
+function eventAllLenguages() {
+
+    allLenguages = document.querySelectorAll("#cardsContainer > div > div.card-filter > p.lenguages")
+    allLenguages[0].addEventListener('click', function () {
+
+
+
+        console.log(filterArray)
+
+
+        for (let i = 0; i < filterArray.length; i++) {
+            idNoEliminar.push(filterArray[i].id)
+        }
+        console.log(filterArray)
+    })
+
+}
+
+
+function LenguagesFilterJson(element, section) {
+    if (filterArray.length < 1 || clearActive == "true" || filterActive == "true") {
+
+        clearActive = "false"
+
+    }
+
+    numberOfDeleteCards = (contador - filterArray.length);
+    idNoEliminar = []
+
+    //mete id para no eliminar
+    for (let i = 0; i < filterArray.length; i++) {
+        idNoEliminar.push(filterArray[i].id)
+    }
+
+    for (let i = 0; i < (numberOfDeleteCards + idNoEliminar.length); i++) {
+        card[i].classList.add('display-none')
+    }
+    for (let i = 0; i < idNoEliminar.length; i++) {
+        id = idNoEliminar[i]
+        card[id - 1].classList.remove('display-none')
+    }
+
+    allFilters = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div")
+
+}
+
+
+//filtrar array
+
+function allFiltersfilterArrayLanguagues(e) {
+    allFilters = document.querySelectorAll("body > main > section.section-filter > div.container-filter > div")
+    console.log(e)
+
+    if (filterArray.length < 1 || clearActive == "true" || filterActive == "true") {
+        filterArray = json.filter(function (array) {
+            for (let j = 0; j < array.languages.length; j++) {
+                if (array.languages[j] == e.target.innerText) {
+                    return (array.languages[j] == e.target.innerText)
+                }
+            }
+
+        })
+
+
+    }    
+    if(allFilters.length>2){
+        filterArray = filterArray.filter(function (array) {
+            for (let j = 0; j < array.languages.length; j++) {
+                if (array.languages[j] == e.target.innerText) {
+                    return (array.languages[j] == e.target.innerText)
+                }
+            }
+
+        })
+    }  
+    else {
+        clearActive = "false"
+        filterArray = filterArray.filter(function (array) {
+            for (let j = 0; j < array.languages.length; j++) {
+                if (array.languages[j] == e.target.innerText) {
+                    return (array.languages[j] == e.target.innerText)
+                }
+            }
+
+        })
+    }
+   
 }

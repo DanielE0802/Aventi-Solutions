@@ -11,7 +11,7 @@ body {
     background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-mobile.svg");
     background-color: #5ba4a4;
     background-size: contain;
-    width: 100vw;
+    width: 100%;
     height: 150px; }
   body main {
     display: flex;
@@ -190,7 +190,8 @@ body {
 
 @media screen and (min-width: 1024px) {
   body header {
-    background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-desktop.svg"); }
+    background-image: url("https://raw.githubusercontent.com/DanielE0802/Aventi-Solutions/e34c07b08321dfeabddd8d945c2b6a2940718ca2/img/bg-header-desktop.svg");
+    width: 100%; }
 
   .section-filter {
     width: 80%; }
