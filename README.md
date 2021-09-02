@@ -1,6 +1,7 @@
 
 <h1 align="center">Welcome to Page-Jobs 👨‍💼 </h1> 
 <h3 align="center">Web application capable of receiving and displaying dynamic data through a JSON, responsive design, in addition to having its filter bar, which are dependent filters to achieve a better search.</h3>
+<div align="center">
 
 ## 👨🏽‍💻Built with:
 
