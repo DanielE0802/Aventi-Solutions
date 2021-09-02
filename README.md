@@ -10,7 +10,5 @@
 <img alt="JavaScript" src="https://img.icons8.com/color/64/000000/javascript.png"/>
 <img src="https://img.icons8.com/color/64/000000/sass.png"/>
 
-### Dedicated time ⌚ ⇒ [![wakatime](https://wakatime.com/badge/github/DanielE0802/Proyecto-GIFOS.svg)](https://wakatime.com/badge/github/DanielE0802/Proyecto-GIFOS)
-
 ---
 **⭐️ From [DanielE0802](https://github.com/DanielE0802)**
